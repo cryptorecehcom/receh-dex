@@ -33,7 +33,6 @@ Earn trading fees by contributing to liquidity pools (LP).
 ---
 
 ## Contract Addresses
-Replace placeholders with your actual addresses.
 
 ### **Core Chain**
 - **Factory:** `0xAeEdf8B9925c6316171f7c2815e387DE596Fa11B`  
