@@ -114,8 +114,6 @@ const amounts = await router.getAmountsOut(
 );
 ```
 
-This code works inside WordPress code blocks.
-
 ---
 
 ## Providing Liquidity
