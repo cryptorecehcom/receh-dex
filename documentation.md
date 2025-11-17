@@ -226,8 +226,6 @@ factory.getPair(tokenA, tokenB);
   - volatility  
 - No centralized control over user balances  
 
-If you have an audit report, link it here.
-
 ---
 
 ## Roadmap
