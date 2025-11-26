@@ -89,7 +89,7 @@ Supported wallets:
 - WalletConnect clients  
 
 Steps:
-1. Visit: `https://app.cryptoreceh.com/core/#/swap`
+1. Visit: `https://app.cryptoreceh.com/dex/#/swap`
 2. Click **Connect Wallet**
 3. Select your wallet
 4. Choose **Core** or **Matahari** network
@@ -139,7 +139,7 @@ You will receive **LP Tokens**, representing your pool share.
 Anyone can create a pair.
 
 Steps:  
-1. Go to: `https://app.cryptoreceh.com/core/#/pool`  
+1. Go to: `https://app.cryptoreceh.com/dex/#/pool`  
 2. Select token A + token B  
 3. Provide initial liquidity  
 4. Approve & confirm  
@@ -240,7 +240,8 @@ factory.getPair(tokenA, tokenB);
 
 ## Contact Information
 - Website: https://app.cryptoreceh.com  
-- DEX App: https://app.cryptoreceh.com/core/#/swap  
+- DEX App: https://app.cryptoreceh.com/dex/#/swap
+- Pair Info: https://app.cryptoreceh.com/dex/info/ 
 - Telegram: https://t.me/cryptorecehcom  
 - X/Twitter: https://x.com/cryptorecehcom  
 - Email: support@cryptoreceh.com  
