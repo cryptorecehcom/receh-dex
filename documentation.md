@@ -16,7 +16,8 @@ This documentation explains how the protocol works, how users can trade, how dev
 
 ### 🔹 Multi-Chain Support
 - Core Chain  
-- Matahari Chain  
+- Matahari Chain
+- BNB Chain (soon) 
 
 ### 🔹 Permissionless Listing
 Anyone can list any token pair without central approval.
@@ -240,8 +241,8 @@ factory.getPair(tokenA, tokenB);
 
 ## Contact Information
 - Website: https://app.cryptoreceh.com  
-- DEX App: https://app.cryptoreceh.com/dex/#/swap
-- Pair Info: https://app.cryptoreceh.com/dex/info/ 
+- DEX App: https://app.cryptoreceh.com/core/#/swap
+- Pair Info: https://app.cryptoreceh.com/core/info/ 
 - Telegram: https://t.me/cryptorecehcom  
 - X/Twitter: https://x.com/cryptorecehcom  
 - Email: support@cryptoreceh.com  
