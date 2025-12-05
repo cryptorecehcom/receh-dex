@@ -88,7 +88,7 @@ Supported wallets:
 - MetaMask  
 - Trust Wallet  
 - Core Wallet  
-- Matahari Wallet  
+- Bitget Wallet  
 - WalletConnect clients  
 
 Steps:
