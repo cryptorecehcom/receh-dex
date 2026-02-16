@@ -17,7 +17,7 @@ This documentation explains how the protocol works, how users can trade, how dev
 ### 🔹 Multi-Chain Support
 - Core Chain  
 - Matahari Chain (suspend)
-- Riche Chain (maintenance)
+- Riche Chain
 - Polygon (on build)
 - BNB Chain (soon) 
 
@@ -37,17 +37,11 @@ Earn trading fees by contributing to liquidity pools (LP).
 
 ## Contract Addresses
 
-### **Core Chain**
+### **Riche Chain**
 - **Factory:** `0xAeEdf8B9925c6316171f7c2815e387DE596Fa11B`  
 - **Router:** `0x8E9556415124b6C726D5C3610d25c24Be8AC2304`  
-- **Wrapped Native (WCORE):** `0x40375C92d9FAf44d2f9db9Bd9ba41a3317a2404f`  
-- **Example Pair:** DANA/WCORE  
-
-### **Matahari Chain**
-- **Factory:** `0x15EE9D6aCCd3C1970F2c775c8d9eb2EA59255Cab`  
-- **Router:** `0x7Abdb3044a20812175B4A3ABE0D46fcf7B35DbC6`  
-- **Wrapped Native (WMTHR):** `0xC325B65a84f7A870C7f1EB52e89CE1f28427Ce47`  
-- **Example Pair:** DANA/WMTHR  
+- **Wrapped Native (WRIC):** `0xEa126036c94Ab6A384A25A70e29E2fE2D4a91e68`  
+- **Example Pair:** WRIC/MICIN
 
 ---
 
@@ -92,7 +86,7 @@ Supported wallets:
 - WalletConnect clients  
 
 Steps:
-1. Visit: `https://app.cryptoreceh.com/dex/#/swap`
+1. Visit: `https://cryptoreceh.com/dex/#/swap`
 2. Click **Connect Wallet**
 3. Select your wallet
 4. Choose **Core** or **Matahari** network
@@ -142,7 +136,7 @@ You will receive **LP Tokens**, representing your pool share.
 Anyone can create a pair.
 
 Steps:  
-1. Go to: `https://app.cryptoreceh.com/dex/#/pool`  
+1. Go to: `https://cryptoreceh.com/dex/#/pool`  
 2. Select token A + token B  
 3. Provide initial liquidity  
 4. Approve & confirm  
