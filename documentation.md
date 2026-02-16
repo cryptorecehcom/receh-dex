@@ -241,7 +241,9 @@ factory.getPair(tokenA, tokenB);
 - Pair Info: https://cryptoreceh.com/dex/info/ 
 - Telegram: https://t.me/cryptorecehcom  
 - X/Twitter: https://x.com/cryptorecehcom  
-- Email: support@cryptoreceh.com  
+- Email: support@cryptoreceh.com
+
+- DEX Logo: https://raw.githubusercontent.com/cryptorecehcom/receh-dex/refs/heads/main/images/receh-logo.png
 
 ---
 
