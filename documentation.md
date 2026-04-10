@@ -1,7 +1,7 @@
 # RECEH DEX — Documentation
 
 ## Overview
-RECEH DEX is a fully decentralized exchange (DEX) operating on **Core Chain** and **Matahari Chain**, built using **AMM (Automated Market Maker) V2** architecture. It enables token swaps, liquidity provision, real-time analytics, and permissionless token listings.
+RECEH DEX is a fully decentralized exchange (DEX) operating on **BNB Smart Chain** and **Riche Chain**, built using **AMM (Automated Market Maker) V2** architecture. It enables token swaps, liquidity provision, real-time analytics, and permissionless token listings.
 
 This documentation explains how the protocol works, how users can trade, how developers can integrate the router, and how project owners can list tokens.
 
@@ -15,11 +15,9 @@ This documentation explains how the protocol works, how users can trade, how dev
 - Fast and deterministic pricing  
 
 ### 🔹 Multi-Chain Support
-- Core Chain  
-- Matahari Chain (suspend)
+- BNB Smart Chain
 - Riche Chain
-- Polygon (on build)
-- BNB Chain (soon) 
+- CoreDAO
 
 ### 🔹 Permissionless Listing
 Anyone can list any token pair without central approval.
@@ -37,11 +35,11 @@ Earn trading fees by contributing to liquidity pools (LP).
 
 ## Contract Addresses
 
-### **Riche Chain**
-- **Factory:** `0xAeEdf8B9925c6316171f7c2815e387DE596Fa11B`  
-- **Router:** `0x8E9556415124b6C726D5C3610d25c24Be8AC2304`  
-- **Wrapped Native (WRIC):** `0xEa126036c94Ab6A384A25A70e29E2fE2D4a91e68`  
-- **Example Pair:** WRIC/MICIN
+### **BNB Smart Chain**
+- **Factory:** `0x8E9556415124b6C726D5C3610d25c24Be8AC2304`  
+- **Router:** `0xA131F04149CFA29b3f05d361EA807e737C9b1D95`  
+- **Wrapped BNB (WBNB):** `0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c`  
+- **Example Pair:** USDT/RECEH
 
 ---
 
@@ -86,10 +84,10 @@ Supported wallets:
 - WalletConnect clients  
 
 Steps:
-1. Visit: `https://cryptoreceh.com/dex/#/swap`
+1. Visit: `https://dex.cryptoreceh.com/`
 2. Click **Connect Wallet**
 3. Select your wallet
-4. Choose **Core** or **Matahari** network
+4. Choose **BNB Chain** or **Riche Chain** network
 
 ---
 
@@ -136,7 +134,7 @@ You will receive **LP Tokens**, representing your pool share.
 Anyone can create a pair.
 
 Steps:  
-1. Go to: `https://cryptoreceh.com/dex/#/pool`  
+1. Go to: `https://dex.cryptoreceh.com/`  
 2. Select token A + token B  
 3. Provide initial liquidity  
 4. Approve & confirm  
@@ -148,7 +146,7 @@ A new pair contract will auto-deploy.
 ## Listing Tokens on RECEH DEX
 
 ### Requirements
-- Token must follow **ERC-20 (Core)** or **MTHR-20 (Matahari)**  
+- Token must follow **BEP-20 (BSC)** or **ERC-20 (RicheChain)**  
 - Contract must be verified  
 - Liquidity must be added by the project owner  
 
@@ -168,7 +166,7 @@ Provides:
 - Transaction feed  
 - Token info  
 
-Access: `https://cryptoreceh.com/dex/`
+Access: `https://dex.cryptoreceh.com/info/`
 
 ---
 
@@ -237,7 +235,7 @@ factory.getPair(tokenA, tokenB);
 
 ## Contact Information
 - Website: https://cryptoreceh.com  
-- DEX App: https://cryptoreceh.com/dex/#/swap
+- DEX App: https://dex.cryptoreceh.com/
 - Pair Info: https://cryptoreceh.com/dex/info/ 
 - Telegram: https://t.me/cryptorecehcom  
 - X/Twitter: https://x.com/cryptorecehcom  
