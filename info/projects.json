@@ -1,0 +1,24 @@
+{
+  "0x4c9C431Fa7fD104c0E7230d20E1623E62019A1C5": {
+    "verified": true,
+    "name": "RECEH",
+    "symbol": "RECEH",
+    "logo": "https://raw.githubusercontent.com/recehdex/token-logo/refs/heads/main/RECEH.webp",
+    "description": "RECEH is the native ecosystem token of the RECEH platform. This market page displays on-chain pair data and project information maintained for the RECEH DEX ecosystem.",
+    "website": "https://cryptoreceh.com/token/",
+    "x": "https://x.com/cryptoreceh_",
+    "telegram": "https://t.me/receh_community",
+    "contract": "0x4c9C431Fa7fD104c0E7230d20E1623E62019A1C5"
+  },
+  "0xc55d416476CFC6e879948eD5a5F4461c43Af45Aa": {
+    "verified": true,
+    "name": "Megah Digital Asset",
+    "symbol": "MEGAH",
+    "logo": "https://raw.githubusercontent.com/recehdex/token-logo/refs/heads/main/MEGAH.webp",
+    "description": "MEGAH is a BEP-20 digital asset on BNB Smart Chain. The official project describes MEGAH around staking and ecosystem utility, including the MEGAH Token Generator.",
+    "website": "https://megahcrypto.com/",
+    "x": "https://x.com/MegahCrypto",
+    "telegram": "https://t.me/megahcrypto",
+    "contract": "0xc55d416476CFC6e879948eD5a5F4461c43Af45Aa"
+  }
+}

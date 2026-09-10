@@ -1,0 +1,3 @@
+<?php require __DIR__.'/engine.php';
+$a=$_GET['pair']??'';$range=$_GET['range']??'1D';if(!validAddr($a))out(['error'=>'Invalid pair address'],400);$secs=['1H'=>3600,'4H'=>14400,'1D'=>86400,'1W'=>604800,'1M'=>2592000][$range]??86400;
+try{$d=readj(activityFile($a),[]);$cut=time()-$secs;$d=array_values(array_filter($d,fn($x)=>(int)($x['timestamp']??0)>=$cut));usort($d,fn($x,$y)=>(int)($y['timestamp']??0)<=>(int)($x['timestamp']??0));out(['pair'=>$a,'range'=>$range,'data'=>array_slice($d,0,100)]);}catch(Throwable $e){out(['pair'=>$a,'range'=>$range,'data'=>[],'error'=>'Activity data temporarily unavailable','detail'=>$e->getMessage()],503);}

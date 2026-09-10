@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#05070b">
+  <meta name="color-scheme" content="dark">
+  <meta name="description"
+    content="RECEH DEX Markets — pair prices, liquidity, pool reserves and recent on-chain activity on BNB Smart Chain.">
+  <link rel="canonical" href="https://dex.cryptoreceh.com/info/">
+  <link rel="icon" href="/pwa/icons/icon-192.png">
+  <title>RECEH DEX Markets — Pair Info</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="info.css">
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.17.0/dist/ethers.umd.min.js"></script>
+  <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+
+<body>
+  <div id="bootScreen" class="boot-screen" aria-live="polite">
+    <div class="boot-orb"><span></span></div>
+    <div class="boot-brand">RECEH<span>DEX</span></div>
+    <div id="bootText" class="boot-title">INITIALIZING MARKETS</div>
+    <div id="bootSub" class="boot-sub">Connecting to BNB Smart Chain…</div>
+    <div class="boot-track"><i id="bootProgress"></i></div>
+    <div class="boot-meta"><span>ON-CHAIN DATA</span><span>•</span><span>BSC</span></div>
+  </div>
+  <canvas id="bgCanvas"></canvas>
+  <div class="scanlines"></div>
+  <nav class="topbar">
+    <a class="brand" href="https://dex.cryptoreceh.com/"><img src="/pwa/icons/icon-192.png"
+        alt="RECEH DEX"><span>RECEH<em>DEX</em></span></a>
+    <div class="navlinks"><a href="https://dex.cryptoreceh.com/">Swap</a><a
+        href="https://dex.cryptoreceh.com/">Liquidity</a><a class="active" href="./">Markets</a><a
+        href="https://dex.cryptoreceh.com/listing/">Listing</a></div>
+    <a class="connect" href="https://dex.cryptoreceh.com/">OPEN DEX</a>
+  </nav>
+  <main class="wrap">
+    <section id="marketsView">
+      <header class="hero">
+        <div>
+          <div class="eyebrow">BNB SMART CHAIN · RECEH DEX</div>
+          <h1>MARKETS</h1>
+          <p>Explore liquidity, prices and on-chain activity across RECEH DEX pairs.</p>
+        </div>
+        <div class="live"><i></i> LIVE DATA</div>
+      </header>
+      <div class="toolbar"><label class="search"><span>⌕</span><input id="search" placeholder="Search token or pair"
+            autocomplete="off"></label>
+        <div class="filters" id="filters"><button class="active" data-q="all">ALL</button><button
+            data-q="usdt">USDT</button><button data-q="wbnb">WBNB</button><button data-q="receh">RECEH</button></div>
+        <select id="sort">
+          <option value="liquidity">Liquidity ↓</option>
+          <option value="price">Asset Price ↓</option>
+          <option value="volume">24H Volume ↓</option>
+        </select>
+      </div>
+      <div class="statusbar"><span id="marketStatus">Loading pairs…</span><span id="updated">—</span></div>
+      <div class="market-head"><span>PAIR</span><span>ASSET PRICE</span><span>LIQUIDITY</span><span>24H VOLUME</span>
+      </div>
+      <div id="marketList" class="market-list"></div>
+      <div class="chartPanel panel" style="margin-top:14px">
+        <div class="panelTitle"><span>TOTAL LIQUIDITY HISTORY</span><span class="muted">Shared JSON · BSC</span></div>
+        <div id="liquidityChart" style="height:260px;margin-top:8px"></div>
+        <div id="liquidityNote" class="chartNote">Liquidity history is accumulated server-side from indexed pair
+          reserves.</div>
+      </div>
+    </section>
+
+    <section id="detailView" class="hidden">
+      <button class="back" id="backBtn" type="button">← BACK TO MARKETS</button>
+      <div id="detailLoading" class="panel loading">Loading pair data…</div>
+      <div id="detailContent" class="hidden">
+        <div class="pairHero panel">
+          <div class="pairTitle">
+            <div class="pair-logos" id="pairLogos"></div>
+            <div>
+              <div class="eyebrow">RECEH DEX MARKET <span id="verifiedBadge" class="verified hidden">✓ VERIFIED</span>
+              </div>
+              <h2 id="pairName">—</h2>
+              <div id="pairAddresses" class="mono muted">—</div>
+            </div>
+          </div>
+          <div class="pairPrice"><strong id="detailPrice">—</strong><span id="detailChange" class="change">—</span>
+          </div>
+          <div class="tradeBtns"><a id="buyBtn" class="buy" href="#">BUY</a><a id="sellBtn" class="sell"
+              href="#">SELL</a></div>
+        </div>
+        <div class="chartPanel panel">
+          <div class="panelTitle"><span>PRICE / PAIR RATIO CHART</span>
+            <div id="ranges" class="ranges"><button data-range="1H">1H</button><button
+                data-range="4H">4H</button><button class="active" data-range="1D">1D</button><button
+                data-range="1W">1W</button><button data-range="1M">1M</button></div>
+          </div>
+          <div id="chart"></div>
+          <div id="chartNote" class="chartNote">Stable-pair candles are USD prices from this pair's on-chain reserves;
+            non-stable candles are the exact token0/token1 pair ratio from Sync events.</div>
+        </div>
+        <div class="statsGrid">
+          <div class="stat panel"><span>ASSET PRICE</span><strong id="sPrice">—</strong></div>
+          <div class="stat panel"><span>LIQUIDITY</span><strong id="sLiquidity">—</strong></div>
+          <div class="stat panel"><span>24H VOLUME</span><strong id="sVolume">—</strong></div>
+          <div class="stat panel"><span>24H TRANSACTIONS</span><strong id="sTxns">—</strong></div>
+        </div>
+        <div class="twoCol">
+          <div class="panel">
+            <div class="panelTitle">POOL RESERVES</div>
+            <div id="reserves" class="rows"></div>
+            <div class="poolAddr"><span>PAIR CONTRACT</span><a id="pairLink" target="_blank" rel="noopener">—</a></div>
+          </div>
+          <div class="panel">
+            <div class="panelTitle">PROJECT / TOKEN</div>
+            <div id="project" class="project"></div>
+          </div>
+        </div>
+        <div class="panel activityPanel">
+          <div class="panelTitle"><span>RECENT ACTIVITY</span><span class="muted">Latest indexed pair events</span>
+          </div>
+          <div id="activity" class="activity"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast"></div>
+  <script src="info.js?v=5"></script>
+</body>
+
+</html>
